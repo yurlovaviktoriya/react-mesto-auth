@@ -1,0 +1,21 @@
+.form__title {
+  margin: 0 0 37px;
+  min-width: 330px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@media screen and (max-width: 650px) {
+  .form__title {
+    min-width: 238px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 45px;
+  }
+}
+
+
+

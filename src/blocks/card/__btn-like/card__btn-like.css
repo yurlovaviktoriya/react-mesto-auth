@@ -1,0 +1,20 @@
+.card__btn-like {
+  width: 22px;
+  height: 19px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  background-image: url(../../../images/icon-like.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 20px;
+  bottom: 38px;
+  transition: opacity .2s linear;
+}
+
+.card__btn-like:hover {
+  cursor: pointer;
+  opacity: .5;
+}
