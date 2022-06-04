@@ -8,3 +8,11 @@
   line-height: 22px;
   text-align: right;
 }
+
+@media screen and (max-width: 650px) {
+  .header__auth-btn {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: start;
+  }
+}

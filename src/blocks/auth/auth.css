@@ -9,3 +9,16 @@
   left: 0;
   background-color: #000;
 }
+
+@media screen and (max-width: 1024px) {
+  .auth {
+    top: 135px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .auth {
+    top: 116px;
+  }
+}

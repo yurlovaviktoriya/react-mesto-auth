@@ -41,6 +41,14 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading }) {
 
 
   /**
+   * Функция сбрасывает текст с инпутов формы
+  */
+  const resetInputs = () => {
+    setAvatar('');
+  }
+
+
+  /**
    * Функция обрабатывает нажатие кнопки сабмита формы
    * @param evt
    */
@@ -74,6 +82,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading }) {
       onSubmit={handleSubmit}
       refBtnSubmit={refBtnSubmit}
       isLoading={isLoading}
+      resetInputs={resetInputs}
     />
   )
 }

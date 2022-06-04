@@ -57,6 +57,14 @@ function AddPlacePopup({ isOpen, onClose, onAddCard, isLoading }) {
 
 
   /**
+   * Функция сбрасывает текст с инпутов формы
+   */
+  const resetInputs = () => {
+    setPlaceInfo({namePlace: '', urlPlaceImg: ''});
+  }
+
+
+  /**
    * Функция обрабатывает нажатие кнопки сабмита формы
    * @param evt
    */
@@ -99,6 +107,7 @@ function AddPlacePopup({ isOpen, onClose, onAddCard, isLoading }) {
      onHandleChangeInputError={handleChangeInputError}
      onSubmit={handleSubmit}
      isLoading={isLoading}
+     resetInputs={resetInputs}
    />
  )
 }

@@ -20,7 +20,6 @@ function Register({ onRegister, isLoading }) {
     passwordRegister: ''
   })
 
-
   const [inputErrors, setInputErrors] = useState({
     emailRegister: false,
     passwordRegister: false
@@ -28,7 +27,8 @@ function Register({ onRegister, isLoading }) {
 
   const refBtnSubmit = useRef();
 
-    /**
+
+  /**
    * Функция отправляет данные с инпута в функцию изменения стейта информации о регистрации пользователя
    * @param evt
    */
@@ -114,7 +114,7 @@ function Register({ onRegister, isLoading }) {
           refBtnSubmit={refBtnSubmit}
           isLightTheme={false}
         />
-        <p className="auth__text">Уже зарегистрированы? <Link to="/sign-in">Войти</Link></p>
+        <p className="auth__text">Уже зарегистрированы? <Link to="/sign-in" className="link">Войти</Link></p>
       </div>
     </div>
       </>

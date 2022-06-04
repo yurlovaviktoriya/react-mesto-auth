@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import InputValidator from "../utils/inputValidator";
 
@@ -9,16 +9,21 @@ import InputValidator from "../utils/inputValidator";
  * @returns {JSX.Element} - Разметка компонента
  * @constructor
  */
-function Input({ settings, inputText, onHandleChangeInputText, onToggleButtonState, isLightTheme }) {
+function Input({ settings, inputText, onHandleChangeInputText, onToggleButtonState, isLightTheme, onClose}) {
+
 
   const [isError, setIsError] = useState({isValid: true, message: ''})
   const refInput = useRef();
-
 
   const inputClassName = `form__input ${isLightTheme ? 'form__input_type_light-theme' : 'form__input_type_dark-theme'}
                           ${isError.isValid ? '' : 'form__input_type_error'}`
 
   const textError = isError.isValid ? '' : isError.message;
+
+
+  useEffect(() => {
+    setIsError({isValid: true, message: ''});
+  }, [onClose])
 
 
   /**

@@ -11,7 +11,18 @@ import Form from './Form';
  */
 function PopupWithForm({
                          name, title, btnText, ariaLabel, isOpen, onClose, inputs, onHandleChangeInputText,
-                         onHandleChangeInputError, inputData, onSubmit, refBtnSubmit, isLoading}) {
+                         onHandleChangeInputError, inputData, onSubmit, refBtnSubmit, isLoading,
+                         resetInputs}) {
+
+
+  /**
+   * Функция вызывыет закрытие попапа формы и очистку инпутов формы
+   */
+  const handleOnClick = ()  => {
+    onClose();
+
+    resetInputs();
+  }
 
   return (
     <div className={`popup popup_type_${name} ${isOpen && 'popup_opened'}`}>
@@ -28,9 +39,10 @@ function PopupWithForm({
           isLoading={isLoading}
           btnText={btnText}
           isLightTheme={true}
+          onClose={onClose}
         />
         <button className="popup__btn-close" type="button" aria-label={ariaLabel}
-          onClick={onClose}></button>
+          onClick={handleOnClick}></button>
       </div>
     </div>
   )

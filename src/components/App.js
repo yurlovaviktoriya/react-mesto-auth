@@ -51,6 +51,9 @@ function App() {
       .then(res => {
         setCurrentUser(res);
       })
+      .catch(err => {
+        console.log(err);
+      })
   }, []);
 
 
@@ -62,7 +65,7 @@ function App() {
       .catch(err => {
         console.log(err);
       })
-  }, [cards]);
+  }, []);
 
 
   useEffect(() => {
@@ -78,7 +81,7 @@ function App() {
         console.log(err);
       })
     }
-  }, [loggedIn]);
+  }, []);
 
 
   /**
@@ -117,7 +120,6 @@ function App() {
 
     auth.login(email, password)
       .then((data) => {
-        //console.log(data);
         if (data.token) {
           localStorage.setItem('token', data.token);
         }
@@ -126,6 +128,8 @@ function App() {
         history.push('/');
       })
       .catch(err => {
+        setIsInfoToolTipOpen(true);
+        setIsRegisterSuccess(false);
         console.log(err);
       })
       .finally(() => {
@@ -284,8 +288,8 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setIsInfoToolTipOpen(false);
     setSelectedCard(null);
+    setIsInfoToolTipOpen(false);
     setIsRegisterSuccess(null);
   }
 

@@ -3,3 +3,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media screen and (max-width: 650px) {
+  .header__auth-block {
+    display: block;
+    margin: 0 27px 0 0;
+  }
+}

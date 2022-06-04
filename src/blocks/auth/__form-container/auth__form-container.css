@@ -2,3 +2,10 @@
   width: 358px;
   text-align: center;
 }
+
+
+@media screen and (max-width: 650px) {
+  .auth__form-container {
+    width: 282px;
+  }
+}

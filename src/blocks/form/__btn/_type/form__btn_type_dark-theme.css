@@ -3,3 +3,9 @@
   background-color: #fff;
   color: #000;
 }
+
+@media screen and (max-width: 650px) {
+  .form__btn_type_dark-theme {
+    margin-top: 173px;
+  }
+}

@@ -20,6 +20,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
       profileDescription: ''
   });
 
+
   const [inputErrors, setInputErrors] = useState({
     profileName: false,
     profileDescription: false
@@ -27,13 +28,12 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
 
   const refBtnSubmit = useRef();
 
-
   useEffect(() => {
     setProfileInfo({
       profileName: name,
       profileDescription: about
     });
-  }, [name, about]);
+  }, [name, about, onClose]);
 
 
   /**
@@ -70,6 +70,17 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
      }
     return Object.values(inputErrors).every(item => item === false);
   };
+
+
+  /**
+   * Функция сбрасывает текст с инпутов формы
+  */
+  const resetInputs = () => {
+    setProfileInfo((state) => ({...state,
+      profileName: '',
+      profileDescription: ''
+    }));
+  }
 
 
   /**
@@ -121,6 +132,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
       onSubmit={handleSubmit}
       refBtnSubmit={refBtnSubmit}
       isLoading={isLoading}
+      resetInputs={resetInputs}
     />
   )
 }
