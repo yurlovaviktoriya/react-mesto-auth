@@ -267,7 +267,7 @@ function App() {
     setIsLoading(true);
     api.addCard({name, link})
       .then(res => {
-        setCards([...cards, res]);
+        setCards([res, ...cards]);
       })
       .catch(err => {
         console.log(err);
